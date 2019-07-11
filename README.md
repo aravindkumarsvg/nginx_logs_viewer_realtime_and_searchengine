@@ -105,8 +105,6 @@ terraform output logs_producer_url
 minikube ip
 terraform output realtime_viewer_url
 ```
-### Todo
-  - Need to configure the polling times of various components. Since, its taking more time to load and view the data.
 # Repos
   - Github - https://github.com/aravindkumarsvg
   - Github Gists - https://gist.github.com/aravindkumarsvg
