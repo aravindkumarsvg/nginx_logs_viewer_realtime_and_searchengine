@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head lang="en">
+  <title>Nginx Access Realtime</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script>
+    var socket = io();
+    socket.on('inserted', function(data) {
+      var realtimeHolder = document.getElementById("realtime-body");
+      var trElem = document.createElement("tr");
+      
+      var timestampTd = document.createElement("td");
+      var timestampData = document.createTextNode(data.timestamp);
+      timestampTd.appendChild(timestampData);
+      var requestTd = document.createElement("td");
+      var requestData = document.createTextNode(data.request);
+      requestTd.appendChild(requestData);
+      var statusTd = document.createElement("td");
+      var statusData = document.createTextNode(data.status);
+
+      statusTd.appendChild(statusData);
+      trElem.append(timestampTd, requestTd, statusTd);
+
+      var statusNum = +data.status;
+      if (statusNum) {
+        if (statusNum <= 199) {
+          trElem.className = "table-info"
+        } else if (statusNum <= 299) {
+          trElem.className = "table-success"
+        } else if (statusNum <= 399) {
+          trElem.className = "table-warning"
+        } else {
+          trElem.className = "table-danger"
+        }
+      }
+
+      realtimeHolder.appendChild(trElem)
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <table id="realtime" class="table table-hover">
+      <thead>
+        <tr>
+          <th>
+            Timestamp
+          </th>
+          <th>
+            Request
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody id="realtime-body">
+        <!-- Realtime data holder -->
+      </tbody>
+    </table>
+  </div>
+</body>
