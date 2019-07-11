@@ -112,3 +112,4 @@ terraform output realtime_viewer_url
   - Github Gists - https://gist.github.com/aravindkumarsvg
   - Dockerhub - https://hub.docker.com/u/aravindkumars
   - Vagrant Boxes - https://app.vagrantup.com/aravindkumarsvgj
+  - Asciinema - https://asciinema.org/~aravindkumarsvgm
