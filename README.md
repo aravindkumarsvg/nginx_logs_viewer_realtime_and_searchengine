@@ -10,6 +10,11 @@ Its just a demo application.
   - Kubectl
   - Helm
   - Terraform
+## Screencasts
+  - Setup and Teardown
+[![Setup and Teardown](https://asciinema.org/a/256791.svg)](https://asciinema.org/a/256791)
+  - Worflow
+![Workflow](screencasts/nginx_logs_viewer_realtime_and_searchengine.gif)
 ## Components
   - nginx-logs-producer
     - nginx, fluentd with elasticsearch and kafka plugins
@@ -100,6 +105,8 @@ terraform output logs_producer_url
 minikube ip
 terraform output realtime_viewer_url
 ```
+### Todo
+  - Need to configure the polling times of various components. Since, its taking more time to load and view the data.
 # Repos
   - Github - https://github.com/aravindkumarsvg
   - Github Gists - https://gist.github.com/aravindkumarsvg
