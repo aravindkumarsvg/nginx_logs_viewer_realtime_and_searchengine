@@ -10,7 +10,7 @@ Its just a demo application.
   - Kubectl
   - Helm
   - Terraform
-## Flowdiagram
+## Flow Diagram
 ![Flowdiagram](pictures/nginx_logs_viewer_realtime_and_searchengine.png)
 ## Screencasts
   - Setup and Teardown
