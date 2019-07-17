@@ -44,21 +44,21 @@ docker build -t aravindkumars/realtime-viewer:1.0 -t aravindkumars/realtime-view
 docker push aravindkumars/realtime-viewer:1.0
 docker push aravindkumars/realtime-viewer:latest 
 ```
-    - kafka-consumer
+   - kafka-consumer
 ```sh
 cd kafka-consumer
 docker build -t aravindkumars/kafka-nginx-consumer:1.0 -t aravindkumars/kafka-nginx-consumer:latest . 
 docker push aravindkumars/kafka-nginx-consumer:1.0
 docker push aravindkumars/kafka-nginx-consumer:latest 
 ```
-    - nginx-fluentd
+   - nginx-fluentd
 ```sh
 cd fluentd-docker
 docker build -t aravindkumars/nginx-fluentd:1.0 -t aravindkumars/nginx-fluentd:latest . 
 docker push aravindkumars/nginx-fluentd:1.0
 docker push aravindkumars/nginx-fluentd:latest 
 ```
-    - nginx
+   - nginx
 ```sh
 cd nginx-docker
 docker build -t aravindkumars/nginx-docker:1.0 -t aravindkumars/nginx-docker:latest . 
